@@ -1,41 +1,42 @@
 package com.iessanalberto.dam1;
 
 public class Triangulo {
-    private int base;
-    private int altura;
+   //ATRIBUTOS DE LA CLASE QUE LO DEFINE
+    private int base ;
+    private int altura ;
 
-    public Triangulo(int base, int altura) {
+    //CONSTRUCTORES DEL OBJETO Y SOBRECARGA
+    public Triangulo() {
+        this.altura=8;
+        this.base=10;
+    }
+
+    public Triangulo(int base_input, int altura_input) {
+        this.base = base_input;
+        this.altura = altura_input;
+
+    }
+    ;
+    //FUNCIONES
+    public int getBase() {
+        return base;
+    }
+
+    public void setBase(int base) {
         this.base = base;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
         this.altura = altura;
-
-        }
-
-    public int calcularArea() {
-        return (base * altura) / 2;
     }
 
-    public static void main(String[] args) {
-        Triangulo triangulo = new Triangulo(10, 8);
-        int areaTriangulo = triangulo.calcularArea();
 
-        System.out.println("El triángulo de " + triangulo.base + " por " + triangulo.altura + " tiene un área de " + areaTriangulo);
-    }
-
-    private ServicioTriangulo servicioTriangulo;
-
-    public Triangulo(ServicioTriangulo servicioTriangulo) {
-        this.servicioTriangulo = servicioTriangulo;
-    }
-
-    public int calcularArea2() {
-        return (servicioTriangulo.obtenerBase() * servicioTriangulo.obtenerAltura()) / 2;
-    }
-
-    public int calcularPerimetro() {
-        //return base + altura + base + altura; PRUEBA EN VERDE
-        return 2 * (base + altura); // REFACTORIZADA
+    public int getArea(){
+        return (altura*base)/2;
     }
 }
-
-
 
