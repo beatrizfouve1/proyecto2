@@ -39,7 +39,8 @@ public class Rectangulo {
     }
 
     public float getPerimetro(){
-        return (altura+base)*2F;
+        //return altura + base + altura + base; //PRUEBA EN VERDE
+        return (altura+base)*2F; // PRUEBA REFACTORIZADA
     }
 }
 
